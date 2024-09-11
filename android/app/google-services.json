@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "306745383039",
+    "project_id": "chatbot-54001",
+    "storage_bucket": "chatbot-54001.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306745383039:android:8b534bfd34e3a0df65c74a",
+        "android_client_info": {
+          "package_name": "com.nyxeldevid.tanya_wii"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306745383039-9a32tvinbp2910h2n24jjjqh6v9s68u6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nyxeldevid.tanya_wii",
+            "certificate_hash": "9d2d0d5bc1d97def9eef747d4a5f98f47787a6c8"
+          }
+        },
+        {
+          "client_id": "306745383039-2ih3ee8bao0ek1449p5pn6mmu6uke2g0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZizDkgdrQTZmkSckznrtRGiPEgzrZi4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "306745383039-2ih3ee8bao0ek1449p5pn6mmu6uke2g0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "306745383039-o36tomqc7nkjf23o5dovulc6g0fh1t83.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nyxeldevid.tanyaWii"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
