@@ -29,28 +29,54 @@ To run this project locally, follow these steps:
 git clone https://github.com/Adityadn64/tanya_wii.git
 ```
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
 
 ```bash
 cd tanya_wii
 ```
 
-3. Install the required dependencies:
+3. **Install the required dependencies:**
 
 ```bash
 flutter pub get
 ```
 
-4. Create a .env file for environment variables (if needed):
-
-If your application uses sensitive API keys or configuration, create a .env file in the root of your project and add necessary variables.
+4. **Create a .env file for environment variables (if needed):**
+   If your application uses sensitive API keys or configuration, create a .env file in the root of your project and add necessary variables.
 
 ```bash
 API_KEY=your_api_key
 GOOGLE_CLIENT_ID=your_google_client_id
 ```
 
-5. Run the application:
+5. **Configuration firebase_options.dart**
+[Read the firebase to flutter configuration guide](https://firebase.google.com/docs/flutter/setup)
+
+6. **Configuration firestore database**
+```bash
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
+
+```
+
+7. **Configuration storage**
+```bash
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}
+
+```
+
+8. **Run the application:**
 
 ```bash
 flutter run
