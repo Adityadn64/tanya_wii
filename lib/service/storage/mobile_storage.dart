@@ -1,7 +1,29 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import 'package:permission_handler/permission_handler.dart';
+
+Future<void> requestStoragePermission() async {
+  var status = await Permission.storage.status;
+  if (!status.isGranted) {
+    await Permission.storage.request();
+  }
+}
+
 class StorageService {
-  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+  StorageService() {
+    _initialize(); // Memanggil method async di dalam constructor
+  }
+
+  Future<void> _initialize() async {
+    await requestStoragePermission();
+  }
+
+  final FlutterSecureStorage _storage = const FlutterSecureStorage(
+    aOptions: AndroidOptions(
+      encryptedSharedPreferences:
+          true, // Menggunakan Shared Preferences terenkripsi
+    ),
+  );
 
   Future<void> saveChatHistory(String messagesJson) async {
     await _storage.write(key: 'chat_history', value: messagesJson);
