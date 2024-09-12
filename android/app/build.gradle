@@ -6,6 +6,10 @@ plugins {
     id "com.google.gms.google-services"
 }
 
+dependencies {
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -47,10 +51,10 @@ android {
 
     signingConfigs {
         release {
-            keyAlias 'nyxeldevid.likasirku'
-            keyPassword 'android'
-            storeFile file('keystore/debug.keystore')
-            storePassword 'android'
+            keyAlias 'nyxeldevid.tanya_wii'
+            keyPassword 'Nunung1983'
+            storeFile file('keystore/com.nyxeldevid.tanya_wii.jks')
+            storePassword 'Nunung1983'
         }
     }
     buildTypes {
