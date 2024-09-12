@@ -103,6 +103,7 @@ class ChatScreenState extends State<ChatScreen> {
   String? _mimeType;
 
   String? _photoURL;
+  String? _displayName;
 
   // late AnimationController _controllerInputLoadingFilePick;
 
@@ -136,6 +137,7 @@ class ChatScreenState extends State<ChatScreen> {
         setState(() {
           // _displayName = userResult?.displayName;
           _photoURL = userResult?.photoURL;
+          _displayName = userResult?.displayName;
         });
       }
     });
@@ -176,6 +178,10 @@ class ChatScreenState extends State<ChatScreen> {
       safetySettings: safetySettings,
       systemInstruction: Content.multi(
         [
+          if (_displayName != null)
+            TextPart(
+              "Namaku $_displayName",
+            ),
           TextPart(
             "Tanyawii adalah Chatbot yang dikembangkan oleh Aditya Dwi Nugraha",
           ),
@@ -778,7 +784,7 @@ class ChatScreenState extends State<ChatScreen> {
           }
 
           if (chatHistoryJson != null) {
-            _processChatHistory(chatHistoryJson);
+            _processChatHistory(chatHistoryJson as String);
           }
         }
       } else {
@@ -788,7 +794,7 @@ class ChatScreenState extends State<ChatScreen> {
         }
 
         if (chatHistoryJson != null) {
-          _processChatHistory(chatHistoryJson);
+          _processChatHistory(chatHistoryJson as String);
         }
       }
     } catch (e) {
@@ -1258,7 +1264,7 @@ class ChatScreenState extends State<ChatScreen> {
         detail = user.providerData.first.email;
         ale = true;
       } else {
-        detail = _storageService.loadDetailStorage();
+        detail = _storageService.loadDetailStorage() as String;
       }
 
       if (detail == null || detail.isEmpty) {
