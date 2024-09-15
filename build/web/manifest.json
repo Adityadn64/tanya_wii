@@ -1,0 +1,29 @@
+{
+    "name": "tanya_wii",
+    "short_name": "tanya_wii",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "A new Flutter project.",
+    "orientation": "portrait-primary",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "icons/TanyaWii 256.png",
+            "sizes": "256x250",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/TanyaWii.png",
+            "sizes": "4534x4418",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/TanyaWii.webp",
+            "sizes": "4534x4418",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
